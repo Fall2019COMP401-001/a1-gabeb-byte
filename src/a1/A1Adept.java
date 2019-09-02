@@ -32,13 +32,17 @@ public class A1Adept {
 				int itemAmount = scan.nextInt();
 				String item = scan.next();
 				
+				
 				for (int y=0; y<itemNames.length; y++) {
-					if (item == itemNames[y]) {
+					
+					
+					if (itemNames[y].contentEquals(item)) {
 						custTotal[i] += itemAmount * prices[y];
-						System.out.println(custTotal[0]);
-
 						
+
+						break;
 					} 
+					
 				}
 				
 			}
@@ -56,9 +60,9 @@ public class A1Adept {
 			}
 		}
 		
-		System.out.println("Biggest: " + richCust + " (" + String.format("%2f", getMaxTotal(custTotal)) + ")");
-		System.out.println("Smallest: " + notSoRichCust + " (" + String.format("%2f", getMinTotal(custTotal)) + ")");
-		System.out.println("Average: " + String.format("%2f", getAvgTotal(custTotal)));
+		System.out.println("Biggest: " + richCust + " (" + String.format("%.2f", getMaxTotal(custTotal)) + ")");
+		System.out.println("Smallest: " + notSoRichCust + " (" + String.format("%.2f", getMinTotal(custTotal)) + ")");
+		System.out.println("Average: " + String.format("%.2f", getAvgTotal(custTotal)));
 		scan.close();
 
 	}
@@ -87,6 +91,12 @@ public class A1Adept {
 		}
 		Avg = Avg/arr.length;
 		return Avg;
+	}
+	public static String elementToString(int i, String[] arr) {
+		
+		return arr[i] + ""; 
+			
+		
 	}
 	
 }
